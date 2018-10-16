@@ -1,5 +1,19 @@
 <div id='toc'>
-    {% for post in site.posts %}
-    <a href="{{ post.url }}">{{ post.title }}</a>
-    {% endfor %}
+    <table>
+        <thead>
+            <tr>
+                <th>Link</th>
+                <th>tags</th>
+            </tr>
+        </thead>
+        {% for post in site.posts %}
+        <tr>
+            <td><a href="{{ post.url }}">{{ post.title }}</a></td>
+            <td>
+                {% for t in post.tags %} {{ t }} &nbsp; {%endfor%}
+
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
 </div>
