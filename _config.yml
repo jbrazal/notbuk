@@ -5,3 +5,8 @@ author: Jed Brazal
 
 # Markdown processor
 markdown: kramdown
+
+
+# Style
+sass:
+    sass_dir: _sass
