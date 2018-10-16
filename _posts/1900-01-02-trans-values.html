@@ -1,0 +1,55 @@
+---
+layout: post
+title: translate
+is_angular: true
+---
+
+{% include angular.html %}
+
+
+<div ng-app="transApp">
+        <div ng-controller='transCtrl'>
+            <h2>SQL Criteria</h2>
+            <!-- Field Name -->
+            <label for="fieldname">Field Name</label>
+            <input type="text" name="" id="fieldname" ng-model="m_fldname">
+            <br>
+            <label for="xlat_alias">XLATITEM Alias</label>
+            <input type="text" name="" id="xlat_alias" ng-model="m_xlat_alias">
+            <br>
+            <label for="main_tbl">Main Table Alias</label>
+            <input type="text" name="" id="main_tbl" ng-model="m_main_tbl">
+            <br>
+            <label for="tbl_alias">Main Table Alias</label>
+            <input type="text" name="" id="tbl_alias" ng-model="m_tbl_alias">
+
+<pre>
+{% raw %}
+SELECT {{ m_tbl_alias }}.{{ m_fldname }}
+, {{ m_xlat_alias }}.XLATLONGNAME
+, {{ m_xlat_alias }}.XLATSHORTNAME
+
+FROM PSXLATITEM {{ m_xlat_alias }}
+--, {{ m_main_tbl }} {{ m_tbl_alias }}
+
+WHERE {{ m_xlat_alias }}.FIELDNAME = '{{ m_fldname }}'
+AND {{ m_xlat_alias }}.EFFDT = (select max({{ m_xlat_alias }}2.EFFDT) 
+                from PSXLATITEM {{ m_xlat_alias }}2 
+                WHERE {{ m_xlat_alias }}2.FIELDNAME = {{ m_xlat_alias }}.FIELDNAME)
+AND {{ m_xlat_alias }}.EFF_STATUS = 'A'
+AND {{ m_xlat_alias }}.FIELDVALUE = {{ m_tbl_alias }}.{{ m_fldname }}
+
+{% endraw %}
+</pre>
+        </div>
+
+        <script>
+                var app = angular.module("transApp", []);
+                app.controller('transCtrl', function ($scope) {
+                    $scope.m_fldname = 'RUNSTATUS';
+                    $scope.m_xlat_alias = 'X';
+                    $scope.m_tbl_alias = 'A';
+                    $scope.m_main_tbl = 'PSPRCSRQST';
+                });
+            </script>
+    </div>
