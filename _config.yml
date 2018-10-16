@@ -1,0 +1,7 @@
+name: Notbuk
+description: My Developer Notebook
+author: Jed Brazal
+
+
+# Markdown processor
+markdown: kramdown
