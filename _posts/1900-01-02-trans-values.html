@@ -25,8 +25,8 @@ is_angular: true
 
 <pre>
 {% raw %}
-SELECT {{ m_tbl_alias }}.{{ m_fldname }}
-, {{ m_xlat_alias }}.XLATLONGNAME
+SELECT --{{ m_tbl_alias }}.{{ m_fldname }}, 
+{{ m_xlat_alias }}.XLATLONGNAME
 , {{ m_xlat_alias }}.XLATSHORTNAME
 
 FROM PSXLATITEM {{ m_xlat_alias }}
@@ -37,7 +37,7 @@ AND {{ m_xlat_alias }}.EFFDT = (select max({{ m_xlat_alias }}2.EFFDT)
                 from PSXLATITEM {{ m_xlat_alias }}2 
                 WHERE {{ m_xlat_alias }}2.FIELDNAME = {{ m_xlat_alias }}.FIELDNAME)
 AND {{ m_xlat_alias }}.EFF_STATUS = 'A'
-AND {{ m_xlat_alias }}.FIELDVALUE = {{ m_tbl_alias }}.{{ m_fldname }}
+-- AND {{ m_xlat_alias }}.FIELDVALUE = {{ m_tbl_alias }}.{{ m_fldname }}
 
 {% endraw %}
 </pre>
