@@ -2,7 +2,7 @@ name: Notbuk
 description: My Developer Notebook
 author: Jed Brazal
 
-baseurl: https://jbrazal.github.io/notbuk
+baseurl: 
 
 # Markdown processor
 markdown: kramdown
