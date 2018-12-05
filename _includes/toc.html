@@ -33,7 +33,7 @@
         {% for post in site.posts %}
         <tr>
             <td><a href="{{ post.url | prepend:site.baseurl }}">{{ post.title }}</a></td>
-            <td>
+            <td style='font-size: 50%'>
                 {% for t in post.tags %} {{ t }} &nbsp; {%endfor%}
 
             </td>
