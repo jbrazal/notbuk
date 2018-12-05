@@ -1,5 +1,4 @@
 ---
-layout: post
 title: IB Service WSDL URL
 category: SQL
 tags: [peoplesoft, meta, web service]

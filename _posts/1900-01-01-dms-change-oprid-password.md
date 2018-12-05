@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Change User Password
 category: SQL
 is_angluar: false

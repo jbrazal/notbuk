@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Change Schema
 category: SQL
 tags: [oracle]
