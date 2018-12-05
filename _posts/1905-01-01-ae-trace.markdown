@@ -1,5 +1,4 @@
 ---
-layout: post
 title: App Engine Trace
 category: Debug
 tags: [peoplesoft, peopletools, app engine]

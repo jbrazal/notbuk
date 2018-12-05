@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Record Field Properties
 category: SQL
 tags: [peoplesoft, peopletools, meta]

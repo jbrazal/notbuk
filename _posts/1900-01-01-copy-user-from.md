@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Copy User Roles
 category: SQL
 tags: [peopletools, peoplesoft]
