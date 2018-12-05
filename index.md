@@ -1,7 +1,4 @@
 ---
-layout: page
-title: Home
-order: 1
+layout: search
+author_profile: true
 ---
-
-This is my notbuk
