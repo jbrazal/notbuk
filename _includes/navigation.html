@@ -1,8 +1,0 @@
-<nav>
-    <div>
-{% assign pages_sorted = site.pages | sort: "order" %}
-{% for page in pages_sorted %}
-    <a href="{{ page.url | prepend:site.baseurl }}">{{ page.title }}</a>
-{% endfor %}
-</div>
-</nav>
