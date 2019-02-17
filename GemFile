@@ -1,7 +1,18 @@
+<<<<<<< HEAD
 source 'https://rubygems.org'
+=======
+source "https://rubygems.org"
+
+gem "github-pages", group: :jekyll_plugins
+
+
+
+
+# source 'https://rubygems.org'
+>>>>>>> 36892f2b7a1327b2e38176552eac78e6c47ffa20
 
 # gem 'github-pages'
-gem "minimal-mistakes-jekyll"
+# gem "minimal-mistakes-jekyll"
 
 # gem 'jekyll'
 
