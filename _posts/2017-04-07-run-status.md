@@ -1,9 +1,42 @@
 ---
 title: Run Status
 category: SQL
-tags: [peoplesoft, sql]
+tags: [ "peoplesoft", "sql"]
+toc: true
 ---
 
+# MSSQL 
+
+## from and thru date
+```
+declare @fromDate as date = getdate() - 7
+declare @thruDate as date = getdate() - + 1
+
+SELECT R.RUNSTATUS ,
+  X.XLATSHORTNAME DESCR ,
+  COUNT(*) NUM_OF_INSTANCES
+FROM PSPRCSRQST R ,
+  PSXLATITEM X
+WHERE R.RUNSTATUS = X.FIELDVALUE
+AND X.FIELDNAME   = 'RUNSTATUS'
+AND X.EFFDT       =
+  (SELECT MAX(X2.EFFDT)
+  FROM PSXLATITEM X2
+  WHERE X2.FIELDNAME = X.FIELDNAME
+  AND X2.FIELDVALUE  = X.FIELDVALUE
+  AND X2.EFF_STATUS  = 'A'
+  )
+AND (R.RUNDTTM BETWEEN @fromDate AND @thruDate
+OR R.RQSTDTTM BETWEEN @fromDate AND @thruDate )
+GROUP BY R.RUNSTATUS,
+  X.XLATSHORTNAME;
+```
+
+
+
+# Oracle
+
+## Num of Instance by Status
 ```sql
 -- Num of Instances by Status
 SELECT R.RUNSTATUS ,
@@ -24,8 +57,11 @@ AND (R.RUNDTTM BETWEEN TO_DATE('2017-04-13', 'YYYY-MM-DD') AND TO_DATE('2017-04-
 OR R.RQSTDTTM BETWEEN TO_DATE('2017-04-13', 'YYYY-MM-DD') AND TO_DATE('2017-04-16', 'YYYY-MM-DD') )
 GROUP BY R.RUNSTATUS,
   X.XLATSHORTNAME;
+```
   
-  
+## All Instancs
+
+```sql
 -- All Instances
 SELECT R.PRCSJOBNAME,
   R.PRCSJOBSEQ,

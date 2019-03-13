@@ -1,18 +1,17 @@
 title: Notbuk
 name: Jed Brazal
 description: My Developer Notebook
-remote_theme: "mmistakes/minimal-mistakes"
-# theme: minimal-mistakes-jekyll
-minimal_mistakes_skin    : "default" #, "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+# remote_theme: "mmistakes/minimal-mistakes"
+theme: minimal-mistakes-jekyll
+minimal_mistakes_skin    : "dirt" #, "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 baseurl: /notbuk
 
+permalink: /:categories/:title/
 
 collections: 
   snippets:
     output: true
-
-
 
 
 # Site Author
