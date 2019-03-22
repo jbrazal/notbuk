@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 layout: single
 title: Find PeopleCode or SQL Test
@@ -31,4 +32,39 @@ is_angular: true
     </pre>
 
     </div>
+=======
+---
+layout: single
+title: Find PeopleCode or SQL Test
+category: SQL
+tags: [peoplesoft, peopletools, meta]
+is_angular: true
+---
+{% include angular.html %}
+<div ng-app="">
+    <div>
+    <p>Search Text
+        <input type="text" ng-model="srchtxt">
+    </p>
+    <p>--PeopleCode</p>
+
+    <pre>
+    {% raw %}
+    select *   
+    from PSPCMTXT 
+    where lower(PCTEXT) like lower('%{{ srchtxt }} %');
+    {% endraw %}
+    </pre>
+
+    <p>--SQL</p>
+    <pre>
+    {% raw %}
+    select * 
+    from PSSQLTEXTDEFN 
+    where lower(SQLTEXT) like lower('%{{ srchtxt }}%');
+    {% endraw %}
+    </pre>
+
+    </div>
+>>>>>>> 16412f9fb410fa94fc34b3c3851760354412cde0
 </div>

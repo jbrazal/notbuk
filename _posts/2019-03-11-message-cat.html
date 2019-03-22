@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: Message Catalog
 category: SQL
@@ -29,4 +30,37 @@ and MESSAGE_NBR = {{ m_nbr }}
     app.controller('m_ctrl', function ($scope) {
         // add code to break m_set_nbr into m_set and m_nbr
     });
+=======
+---
+title: Message Catalog
+category: SQL
+tags: [peoplesoft, meta]
+---
+
+{% include angular.html %}
+
+<div ng-app='m_app' ng-controller='m_ctrl'>
+    <input type='text' placeholder='Message Set Nbr' ng-model='m_set'>
+    <input type='text' placeholder='Message  Nbr' ng-model='m_nbr'>
+    <br>
+    <input type="text" placeholder='Set Number, number' onchange="m_apply()" ng-model='m_set_nbr'>
+    <pre>
+{% raw %}
+select *
+	from PSMSGCATDEFN
+where MESSAGE_SET_NBR = {{ m_set }}
+and MESSAGE_NBR = {{ m_nbr }}
+{% endraw %}
+</pre>
+
+
+
+</div>
+
+<script>
+    var app = angular.module("m_app", []);
+    app.controller('m_ctrl', function ($scope) {
+        // add code to break m_set_nbr into m_set and m_nbr
+    });
+>>>>>>> 16412f9fb410fa94fc34b3c3851760354412cde0
 </script>
