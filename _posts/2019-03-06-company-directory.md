@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ---
 title: Company Directory
 category: Module
@@ -15,7 +14,6 @@ Page	    | HR_TREEBLD_RNCTL
 Component   | HR_TREEBLD_RNCTL
 
 
-=======
 ---
 title: Company Directory
 category: Module
@@ -32,4 +30,3 @@ Page	    | HR_TREEBLD_RNCTL
 Component   | HR_TREEBLD_RNCTL
 
 
->>>>>>> 16412f9fb410fa94fc34b3c3851760354412cde0
